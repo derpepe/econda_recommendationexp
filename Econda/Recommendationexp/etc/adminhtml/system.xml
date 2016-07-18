@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <section id="recommendationexp"
+                 translate="label"
+                 type="text"
+                 sortOrder="336"
+                 showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+            <label>econda Cross Sell Export</label>
+            <tab>sales</tab>
+            <resource>Econda_Recommendationexp::econda_recommendationexp</resource>
+            <!-- group "info" currently invisible (no fields) -->
+            <group id="info"
+                   translate="label"
+                   type="text"
+                   sortOrder="1"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Information</label>
+                <comment><![CDATA[
+                <p style="font-family:Arial;color:#000000;font-size:10pt;line-height:1.3em;font-weight:bold;">Intelligente Kaufanreize - mehr als Recommendations</p>
+                econda Cross Sell vereint Recommendation-Engine, Online-Abverkaufstool und Re-Marketing Suite. Damit geht econda deutlich über bloße Produktempfehlungstools hinaus und setzt neue Maßstäbe in der Kundenkommunikation für Online-Shops.
+                <p>&nbsp;</p>
+                <button style="" class="scalable" type="button" onclick="window.open('http://www.econda.de/cross-sell/preisanfrage/')"><span>Jetzt unverbindliches Angebot anfordern!</span></button>
+                <script type="text/javascript">
+                   document.observe('dom:loaded', function(){
+                $('recommendationexp_info').style.display='block';
+                    });
+                </script>
+                 ]]></comment>
+            </group>
+            <group id="settings"
+                   translate="label"
+                   type="text"
+                   sortOrder="2"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Settings</label>
+                <field id="export"
+                       translate="label comment"
+                       type="select"
+                       sortOrder="1"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable Product Export</label>
+                    <comment>Enable product export via HTTP.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="productid"
+                       translate="label comment"
+                       type="select"
+                       sortOrder="2"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Product ID</label>
+                    <comment>Use the Magento Item ID or SKU for Export</comment>
+                    <source_model>Econda\Recommendationexp\Model\Config\Source\Product</source_model>
+                </field>
+                <field id="remote"
+                       translate="label comment"
+                       type="text"
+                       sortOrder="3"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Limit access (Optional)</label>
+                    <comment>Limit access to a specified econda IP. You can receive this information from your econda support.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
